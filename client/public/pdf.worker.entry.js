@@ -7,4 +7,4 @@
 (typeof window !== 'undefined'
 	? window
 	: {}
-).pdfjsWorker = require('pdfjs-dist/build/pdf.worker');
+).pdfjsWorker = require('react-pdf/dist/esm/pdf.worker.entry');
