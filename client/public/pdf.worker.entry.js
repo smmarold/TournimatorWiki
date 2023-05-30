@@ -1,4 +1,3 @@
-'use strict';
 /**
  * PDF.js worker entry file.
  *
