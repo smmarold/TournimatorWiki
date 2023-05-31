@@ -6,7 +6,8 @@ function Week4() {
 		'https://www.figma.com/file/ncIHsR0kMQcXbPt4kJBt7o/Tournimator?type=design&node-id=0-1&t=3WciiAGLJcV94FjE-0';
 	return (
 		<>
-			<h1>Wirefram/Prototype</h1>
+			<h1>Wireframe/Prototype</h1>
+			<p>Click Image to Veiw Full Wireframe</p>
 			<a
 				href={figmaURL}
 				target='_blank'
