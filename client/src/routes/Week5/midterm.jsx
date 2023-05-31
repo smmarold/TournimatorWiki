@@ -1,59 +1,65 @@
-import React, { useState } from 'react';
-import { pdfjs, Document, Page } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
-import pdf from '../../images/MidtermPresentation.pdf';
-import '../styles.css';
+import React from 'react';
+import img1 from '../../images/MidtermPresentation/MidtermPresentation-1.png';
+import img2 from '../../images/MidtermPresentation/MidtermPresentation-2.png';
+import img3 from '../../images/MidtermPresentation/MidtermPresentation-3.png';
+import img4 from '../../images/MidtermPresentation/MidtermPresentation-4.png';
+import img5 from '../../images/MidtermPresentation/MidtermPresentation-5.png';
+import img6 from '../../images/MidtermPresentation/MidtermPresentation-6.png';
+import img7 from '../../images/MidtermPresentation/MidtermPresentation-7.png';
+import img8 from '../../images/MidtermPresentation/MidtermPresentation-8.png';
+import img9 from '../../images/MidtermPresentation/MidtermPresentation-9.png';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-	'pdfjs-dist/build/pdf.worker.min.js',
-	import.meta.url
-).toString();
-
-const options = {
-	cMapUrl: 'cmaps/',
-	standardFontDataUrl: 'standard_fonts/',
-};
-
-function Week1() {
-	const [file, setFile] = useState(pdf);
-	const [numPages, setNumPages] = useState();
-
-	function onFileChange(e) {
-		const { files } = e.target;
-
-		if (files && files[0]) {
-			setFile(files[0] || null);
-		}
-	}
-
-	function onDocumentLoadSuccess({ numPages: nextNumPages }) {
-		setNumPages(nextNumPages);
-	}
-
+function Midterm() {
 	return (
 		<>
-			<header>
-				<h1>Midterm Presentation</h1>
-			</header>
-			<div className='pdfContainer'>
-				<div>
-					<Document
-						file={file}
-						onLoadSuccess={onDocumentLoadSuccess}
-						options={options}
-					>
-						{Array.from(new Array(numPages), (el, index) => (
-							<Page
-								key={`page_${index + 1}`}
-								pageNumber={index + 1}
-							/>
-						))}
-					</Document>
-				</div>
-			</div>
+			<h1>Midterm Presentation</h1>
+			<img
+				src={img1}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img2}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img3}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img4}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img5}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img6}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img7}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img8}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img9}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
 		</>
 	);
 }
 
-export default Week1;
+export default Midterm;

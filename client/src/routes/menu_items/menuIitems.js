@@ -8,6 +8,10 @@ export const menuItems = [
 		url: '/week2',
 	},
 	{
+		title: 'Week 3',
+		url: '/week3',
+	},
+	{
 		title: 'Week 4',
 		url: '/week4',
 	},
@@ -80,10 +84,6 @@ export const menuItems = [
 			{
 				title: 'Week 9',
 				url: 'status?wk=9',
-			},
-			{
-				title: 'Week 10',
-				url: 'status?wk=10',
 			},
 		],
 	},

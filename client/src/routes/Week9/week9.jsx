@@ -1,52 +1,17 @@
-import React, { useState } from 'react';
-import { pdfjs, Document, Page } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
-import pdf from '../../images/GanttChart.pdf';
-import '../styles.css';
-// import { PDFDocumentProxy } from 'pdfjs-dist';
+import React from 'react';
+import img from '../../images/GanttChart-1.png';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-	'pdfjs-dist/build/pdf.worker.min.js',
-	import.meta.url
-).toString();
-
-const options = {
-	cMapUrl: 'cmaps/',
-	standardFontDataUrl: 'standard_fonts/',
-};
-
-function Week7() {
-	const [file] = useState(pdf);
-	const [numPages, setNumPages] = useState(3);
-
-	function onDocumentLoadSuccess({ numPages: nextNumPages }) {
-		setNumPages(nextNumPages);
-	}
-
+function Week9() {
 	return (
 		<>
-			<header>
-				<h1>Gantt Chart</h1>
-			</header>
-			<div className='pdfContainer'>
-				<div>
-					<Document
-						file={file}
-						onLoadSuccess={onDocumentLoadSuccess}
-						options={options}
-					>
-						{Array.from(new Array(numPages), (el, index) => (
-							<Page
-								key={`page_${index + 1}`}
-								pageNumber={index + 1}
-							/>
-						))}
-					</Document>
-				</div>
-			</div>
+			<h1>Gantt Chart</h1>
+			<img
+				src={img}
+				alt='Gantt Chart'
+				style={{width:"75%"}}
+			/>
 		</>
 	);
 }
 
-export default Week7;
+export default Week9;

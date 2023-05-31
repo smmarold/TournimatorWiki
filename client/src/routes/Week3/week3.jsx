@@ -4,11 +4,12 @@ import img from '../../images/UseCase.png';
 function Week3() {
 	return (
 		<>
-			<h1>Status Report Only</h1>
-			{/* <img
+			<h1>Use Case Diagram</h1>
+			<img
 				src={img}
-				alt='proposal pg1'
-			/> */}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
 		</>
 	);
 }

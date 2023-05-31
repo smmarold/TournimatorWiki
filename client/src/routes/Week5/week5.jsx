@@ -8,6 +8,7 @@ function Week5() {
 			<img
 				src={img}
 				alt='proposal pg1'
+				style={{width:"75%"}}
 			/>
 		</>
 	);

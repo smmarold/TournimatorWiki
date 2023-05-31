@@ -1,52 +1,71 @@
-import React, { useState } from 'react';
-import { pdfjs, Document, Page } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
-import pdf from '../../images/HeuristicEval.pdf';
-import '../styles.css';
-import { PDFDocumentProxy } from 'pdfjs-dist';
+import React from 'react';
+import img1 from '../../images/HeuristicEval/HeuristicEval-01.png';
+import img2 from '../../images/HeuristicEval/HeuristicEval-02.png';
+import img3 from '../../images/HeuristicEval/HeuristicEval-03.png';
+import img4 from '../../images/HeuristicEval/HeuristicEval-04.png';
+import img5 from '../../images/HeuristicEval/HeuristicEval-05.png';
+import img6 from '../../images/HeuristicEval/HeuristicEval-06.png';
+import img7 from '../../images/HeuristicEval/HeuristicEval-07.png';
+import img8 from '../../images/HeuristicEval/HeuristicEval-08.png';
+import img9 from '../../images/HeuristicEval/HeuristicEval-09.png';
+import img10 from '../../images/HeuristicEval/HeuristicEval-10.png';
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-	'pdfjs-dist/build/pdf.worker.min.js',
-	import.meta.url
-).toString();
-
-const options = {
-	cMapUrl: 'cmaps/',
-	standardFontDataUrl: 'standard_fonts/',
-};
-
-function Week7() {
-	const [file, setFile] = useState(pdf);
-	const [numPages, setNumPages] = useState(3);
-
-	function onDocumentLoadSuccess({ numPages: nextNumPages }) {
-		setNumPages(nextNumPages);
-	}
-
+function Week8() {
 	return (
 		<>
-			<header>
-				<h1>Heuristic Evaluation</h1>
-			</header>
-			<div className='pdfContainer'>
-				<div>
-					<Document
-						file={file}
-						onLoadSuccess={onDocumentLoadSuccess}
-						options={options}
-					>
-						{Array.from(new Array(numPages), (el, index) => (
-							<Page
-								key={`page_${index + 1}`}
-								pageNumber={index + 1}
-							/>
-						))}
-					</Document>
-				</div>
-			</div>
+			<h1>Heuristic Evaluation</h1>
+			<img
+				src={img1}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img2}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img3}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img4}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img5}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img6}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img7}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img8}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img9}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
+			<img
+				src={img10}
+				alt='HeuristicEval'
+				style={{width:"75%"}}
+			/>
 		</>
 	);
 }
 
-export default Week7;
+export default Week8;

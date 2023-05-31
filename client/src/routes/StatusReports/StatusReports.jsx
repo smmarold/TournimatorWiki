@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import pdf2 from '../../images/statusReports/StatusReportWk2.pdf';
-import pdf3 from '../../images/statusReports/StatusReportWk3.pdf';
-import pdf4 from '../../images/statusReports/StatusReportWk4.pdf';
-import pdf5 from '../../images/statusReports/StatusReportWk5.pdf';
-import pdf6 from '../../images/statusReports/StatusReportWk6.pdf';
-import pdf7 from '../../images/statusReports/StatusReportWk7.pdf';
-import pdf8 from '../../images/statusReports/StatusReportWk8.pdf';
-import pdf9 from '../../images/statusReports/StatusReportWk9.pdf';
+import pdf2 from '../../images/statusReports/StatusReportWk2-1.png';
+import pdf3 from '../../images/statusReports/StatusReportWk3-1.png';
+import pdf4 from '../../images/statusReports/StatusReportWk4-1.png';
+import pdf5 from '../../images/statusReports/StatusReportWk5-1.png';
+import pdf6 from '../../images/statusReports/StatusReportWk6-1.png';
+import pdf7 from '../../images/statusReports/StatusReportWk7-1.png';
+import pdf8 from '../../images/statusReports/StatusReportWk8-1.png';
+import pdf9 from '../../images/statusReports/StatusReportWk9-1.png';
 // import pdf10 from '../../images/statusReports/StatusReportWk10.pdf';
 import { pdfjs, Document, Page } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
@@ -22,16 +22,6 @@ const statusReports = {
 	7: pdf7,
 	8: pdf8,
 	9: pdf9,
-};
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-	'pdfjs-dist/build/pdf.worker.min.js',
-	import.meta.url
-).toString();
-
-const options = {
-	cMapUrl: 'cmaps/',
-	standardFontDataUrl: 'standard_fonts/',
 };
 
 function StatusReports() {
@@ -51,22 +41,11 @@ function StatusReports() {
 			<header>
 				<h1>Status Report Week {wk}</h1>
 			</header>
-			<div className='pdfContainer'>
-				<div>
-					<Document
-						file={file}
-						onLoadSuccess={onDocumentLoadSuccess}
-						options={options}
-					>
-						{Array.from(new Array(numPages), (el, index) => (
-							<Page
-								key={`page_${index + 1}`}
-								pageNumber={index + 1}
-							/>
-						))}
-					</Document>
-				</div>
-			</div>
+			<img
+				src={file}
+				alt='Use case diagram'
+				style={{width:"75%"}}
+			/>
 		</>
 	);
 }
