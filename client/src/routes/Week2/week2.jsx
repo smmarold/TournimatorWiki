@@ -3,7 +3,7 @@ import React from 'react';
 function Week2() {
 	return (
 		<>
-			<h1>Status Reprt Only</h1>
+			<h1>Status Report Only</h1>
 		</>
 	);
 }
